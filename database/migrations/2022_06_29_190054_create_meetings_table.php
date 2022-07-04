@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('meetings', function (Blueprint $table) {
             $table->id();
-            $table->string('day');
+            $table->string('day',15);
             $table->time('startTime');
             $table->time('endTime');
             $table->boolean('status');
             $table->decimal('price',9,3);
-            $table->string('link');
+            $table->string('link',127);
             $table->foreignId('userID');
             $table->foreignId('scheduleID');
             $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

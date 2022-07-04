@@ -67,4 +67,25 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function courses(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Course::class,'creatorID');
+    }
+    public function exams(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Exam::class);
+    }
+    public function boughtCourses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Course::class);
+    }
+    public function serviceRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ServiceRequest::class,'userID');
+    }
+    public function offers(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Offer::class,'userID');
+    }
 }

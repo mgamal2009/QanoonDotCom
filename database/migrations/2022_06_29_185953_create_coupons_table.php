@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name',65);
             $table->integer('usageCount');
             $table->boolean('userType');
             $table->date('expiryDate');

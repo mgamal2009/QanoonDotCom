@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name' , 127);
             $table->foreignId('unitID');
             $table->text('linkOfVideo');
-            $table->integer('duration');
+            $table->integer('duration')->nullable();
             $table->foreign('unitID')->references('id')->on('units')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

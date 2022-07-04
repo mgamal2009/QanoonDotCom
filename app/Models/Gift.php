@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Gift extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'userID',
+        'adminID',
+        'type',
+        'value',
+    ];
 }

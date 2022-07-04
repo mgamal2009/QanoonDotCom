@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('serviceReqID');
             $table->foreignId('userID');
-            $table->boolean('status');
+            $table->boolean('status')->default(0);
             $table->decimal('price',9,3);
             $table->foreign('serviceReqID')->references('id')->on('service_requests')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

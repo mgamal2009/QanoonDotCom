@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('book_bills', function (Blueprint $table) {
             $table->id();
-            $table->string('country');
-            $table->string('city');
-            $table->string('district');
-            $table->string('street');
-            $table->integer('buildingNum');
-            $table->integer('floorNum');
-            $table->integer('unitNum');
+            $table->string('country' , 65);
+            $table->string('city',65);
+            $table->string('district',65);
+            $table->string('street',65);
+            $table->integer('buildingNum',4);
+            $table->integer('floorNum',4);
+            $table->integer('unitNum',4);
             $table->decimal('totalPrice',9,3);
             $table->string('coupon');
             $table->integer('totalNumOfBooks');

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class ScheduleTable extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'periods',
+        'availablePeriods',
+        'bookedPeriods',
+        'meetingPrice',
+        'meetingDuration',
+        'userID',
+    ];
 }

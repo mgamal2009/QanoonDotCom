@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('job_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('cv');
+            $table->string('cv',127);
             $table->string('email');
             $table->string('phoneNumber');
             $table->foreignId('jobID');

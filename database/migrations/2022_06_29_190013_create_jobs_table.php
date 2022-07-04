@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name',65);
             $table->text('desc');
             $table->decimal('price',9,3);
             $table->foreignId('ownerID');

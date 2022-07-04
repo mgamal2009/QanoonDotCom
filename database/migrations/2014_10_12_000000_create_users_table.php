@@ -24,10 +24,10 @@ return new class extends Migration
             $table->string('profile_photo_path', 2048)->nullable();
             $table->boolean('gender');
             $table->boolean('accountType');
-            $table->date('birthDate');
+            $table->date('birthDate')->nullable();
             $table->decimal('balance',9,3);
-            $table->integer('silverPoints');
-            $table->integer('goldPoints');
+            $table->integer('silverPoints')->default(0);
+            $table->integer('goldPoints')->default(0);
             $table->string('cvFile',2048)->nullable();
             $table->string('phoneNumber')->unique();
             $table->timestamps();

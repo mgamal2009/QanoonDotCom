@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('userID');
             $table->foreignId('serviceID');
-            $table->foreignId('offerID');
+            $table->foreignId('offerID')->nullable();
             $table->text('desc');
             $table->text('files');
-            $table->boolean('status');
+            $table->boolean('status')->default(0);
             $table->decimal('minPrice',9,3);
             $table->decimal('maxPrice',9,3);
-            $table->text('deliveredFiles');
+            $table->text('deliveredFiles')->nullable();
             $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('serviceID')->references('id')->on('services')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('offerID')->references('id')->on('offers')->onUpdate('cascade')->onDelete('cascade');

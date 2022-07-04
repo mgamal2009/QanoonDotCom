@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_exams', function (Blueprint $table) {
+        Schema::create('commissions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userID');
-            $table->foreignId('examID');
-            $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('examID')->references('id')->on('exams')->onUpdate('cascade')->onDelete('cascade');
+            $table->tinyInteger('course_commission');
+            $table->tinyInteger('book_commission');
+            $table->tinyInteger('service_commission');
+            $table->tinyInteger('meeting_commission');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_exams');
+        Schema::dropIfExists('commissions');
     }
 };
