@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('content');
             $table->text('metaDesc',250)->nullable();
             $table->text('tags');
-            $table->boolean('status');
+            $table->boolean('status')->default(0);
             $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('categoryID')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
 

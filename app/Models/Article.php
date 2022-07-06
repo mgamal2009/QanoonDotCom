@@ -18,4 +18,13 @@ class Article extends Model
         'tags',
         'status',
     ];
+
+    public function writer(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'userID');
+    }
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Category::class,'categoryID');
+    }
 }

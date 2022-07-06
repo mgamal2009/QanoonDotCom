@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->decimal('totalPrice',9,3);
-            $table->decimal('netPrice',9,3);
+            $table->unsignedDecimal('totalPrice',9,3);
+            $table->unsignedDecimal('netPrice',9,3);
             $table->json('items');
-            $table->foreignId('couponID');
+            $table->foreignId('couponID')->nullable();
             $table->foreign('couponID')->references('id')->on('coupons')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

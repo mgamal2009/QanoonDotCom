@@ -14,4 +14,21 @@ class Room extends Model
         'ownerID',
         'workerID',
     ];
+
+    public function serviceReq(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(ServiceRequest::class, 'serviceReqID');
+    }
+    public function owner(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'ownerID');
+    }
+    public function worker(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'workerID');
+    }
+    public function messages(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Message::class,'roomID');
+    }
 }

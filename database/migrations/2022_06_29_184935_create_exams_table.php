@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
             $table->foreignId('unitID');
-            $table->integer('duration')->default(5);
+            $table->unsignedInteger('duration')->default(5);
             $table->json('questions');
-            $table->tinyInteger('passDegree');
-            $table->tinyInteger('numOfQuestions');
+            $table->unsignedTinyInteger('passDegree');
+            $table->unsignedTinyInteger('numOfQuestions');
             $table->foreign('unitID')->references('id')->on('units')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

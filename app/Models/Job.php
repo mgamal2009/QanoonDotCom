@@ -15,4 +15,13 @@ class Job extends Model
         'price',
         'ownerID',
     ];
+
+    public function owner(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'ownerID');
+    }
+    public function requests(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(JobRequest::class, 'jobID');
+    }
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name' , 127);
             $table->foreignId('unitID');
             $table->text('linkOfVideo');
-            $table->integer('duration')->nullable();
+            $table->unsignedInteger('duration')->nullable();
             $table->foreign('unitID')->references('id')->on('units')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

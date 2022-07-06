@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('delivery_cities', function (Blueprint $table) {
             $table->id();
             $table->string('name' , 65);
-            $table->decimal('price',9,3);
-            $table->tinyInteger('freeDeliveryBooksNum');
+            $table->unsignedDecimal('price',9,3);
+            $table->unsignedTinyInteger('freeDeliveryBooksNum')->default(5);
             $table->timestamps();
         });
     }

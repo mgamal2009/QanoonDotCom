@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('courseID');
             $table->string('name' , 127);
-            $table->integer('duration')->nullable();
+            $table->unsignedInteger('duration')->nullable();
             $table->foreign('courseID')->references('id')->on('courses')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

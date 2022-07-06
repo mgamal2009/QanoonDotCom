@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',65);
             $table->text('desc');
-            $table->decimal('price',9,3);
+            $table->unsignedDecimal('price',9,3);
             $table->foreignId('ownerID');
             $table->foreign('ownerID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

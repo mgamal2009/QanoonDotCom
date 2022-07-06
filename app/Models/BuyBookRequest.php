@@ -14,4 +14,17 @@ class BuyBookRequest extends Model
         'userID',
         'billID',
     ];
+
+    public function book(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Book::class,'bookID');
+    }
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'userID');
+    }
+    public function bill(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Bill::class,'billID');
+    }
 }

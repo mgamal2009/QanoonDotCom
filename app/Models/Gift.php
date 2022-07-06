@@ -15,4 +15,13 @@ class Gift extends Model
         'type',
         'value',
     ];
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'userID');
+    }
+    public function admin(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Admin::class,'adminID');
+    }
 }

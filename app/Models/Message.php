@@ -14,4 +14,13 @@ class Message extends Model
         'senderID',
         'type',
     ];
+
+    public function room(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Room::class,'roomID');
+    }
+    public function sender(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'senderID');
+    }
 }

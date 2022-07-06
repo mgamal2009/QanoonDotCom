@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('day',15);
             $table->time('startTime');
             $table->time('endTime');
-            $table->boolean('status');
-            $table->decimal('price',9,3);
+            $table->boolean('status')->default(0);
+            $table->unsignedDecimal('price',9,3);
             $table->string('link',127);
             $table->foreignId('userID');
             $table->foreignId('scheduleID');

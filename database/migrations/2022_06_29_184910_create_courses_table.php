@@ -16,15 +16,15 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name',127);
-            $table->decimal('price',9,3);
+            $table->unsignedDecimal('price',9,3);
             $table->string('cardImage',2048);
             $table->foreignId('creatorID')->nullable();
             $table->string('coverImage',2048);
             $table->boolean('level');
-            $table->integer('duration')->nullable();
+            $table->unsignedInteger('duration')->nullable();
             $table->text('keywords')->nullable();
             $table->text('metaDesc',250)->nullable();
-            $table->tinyInteger('numOfUnits');
+            $table->unsignedTinyInteger('numOfUnits');
             $table->foreign('creatorID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

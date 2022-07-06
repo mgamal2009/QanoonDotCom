@@ -18,4 +18,12 @@ class Coupon extends Model
         'discountPercent',
         'courseID',
     ];
+    public function course(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Course::class,'courseID');
+    }
+    public function bills(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Bill::class,'couponID');
+    }
 }

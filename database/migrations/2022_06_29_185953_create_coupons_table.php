@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
             $table->string('name',65);
-            $table->integer('usageCount');
+            $table->unsignedInteger('usageCount');
             $table->boolean('userType');
             $table->date('expiryDate');
             $table->boolean('type');
-            $table->tinyInteger('discountPercent');
-            $table->foreignId('courseID');
+            $table->unsignedTinyInteger('discountPercent');
+            $table->foreignId('courseID')->nullable();
             $table->foreign('courseID')->references('id')->on('courses')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

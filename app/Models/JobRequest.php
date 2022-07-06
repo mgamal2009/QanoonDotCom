@@ -16,4 +16,13 @@ class JobRequest extends Model
         'jobID',
         'userID',
     ];
+
+    public function job(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Job::class,'jobID');
+    }
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'userID');
+    }
 }

@@ -19,4 +19,12 @@ class Meeting extends Model
         'userID',
         'scheduleID',
     ];
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'userID');
+    }
+    public function schedule(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(ScheduleTable::class,'scheduleID');
+    }
 }

@@ -15,4 +15,9 @@ class Bill extends Model
         'items',
         'couponID',
     ];
+
+    public function coupon(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Coupon::class,'couponID');
+    }
 }

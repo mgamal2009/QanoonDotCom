@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('name',127);
             $table->boolean('type');
-            $table->decimal('price',9,3);
+            $table->unsignedDecimal('price',9,3);
             $table->string('file',2048)->nullable();
             $table->text('desc');
             $table->string('image',2048);
-            $table->integer('numOfPages');
-            $table->integer('stock');
+            $table->unsignedInteger('numOfPages');
+            $table->unsignedInteger('stock');
             $table->string('authorName',65);
             $table->string('publisherName',127);
             $table->timestamps();

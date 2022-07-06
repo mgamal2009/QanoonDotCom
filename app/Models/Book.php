@@ -21,4 +21,9 @@ class Book extends Model
         'authorName',
         'publisherName',
     ];
+
+    public function buyRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(BuyBookRequest::class,'bookID');
+    }
 }

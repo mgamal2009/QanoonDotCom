@@ -21,8 +21,8 @@ return new class extends Migration
             $table->text('desc');
             $table->text('files');
             $table->boolean('status')->default(0);
-            $table->decimal('minPrice',9,3);
-            $table->decimal('maxPrice',9,3);
+            $table->unsignedDecimal('minPrice',9,3);
+            $table->unsignedDecimal('maxPrice',9,3);
             $table->text('deliveredFiles')->nullable();
             $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('serviceID')->references('id')->on('services')->onUpdate('cascade')->onDelete('cascade');

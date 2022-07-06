@@ -17,4 +17,13 @@ class ScheduleTable extends Model
         'meetingDuration',
         'userID',
     ];
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'userID');
+    }
+    public function meetings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Meeting::class,'scheduleID');
+    }
 }

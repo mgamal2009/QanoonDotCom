@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('userID');
             $table->foreignId('adminID');
             $table->boolean('type');
-            $table->decimal('value',9,3);
+            $table->unsignedDecimal('value',9,3);
             $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('adminID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

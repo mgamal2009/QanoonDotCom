@@ -13,4 +13,8 @@ class Admin extends Model
         'email',
         'password',
     ];
+    public function gifts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Gift::class,'adminID');
+    }
 }

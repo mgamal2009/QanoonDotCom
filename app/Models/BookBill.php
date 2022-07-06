@@ -23,4 +23,9 @@ class BookBill extends Model
         'netPrice',
         'items',
     ];
+
+    public function buyRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(BuyBookRequest::class,'billID');
+    }
 }

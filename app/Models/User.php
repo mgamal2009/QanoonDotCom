@@ -88,4 +88,45 @@ class User extends Authenticatable
     {
         return $this->hasMany(Offer::class,'userID');
     }
+    public function ownerRooms(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Room::class,'ownerID');
+    }
+    public function workerRooms(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Room::class,'workerID');
+    }
+    public function messages(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Message::class,'senderID');
+    }
+    public function articles(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Article::class,'userID');
+    }
+    public function buyRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(BuyBookRequest::class,'userID');
+    }
+    public function gifts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Gift::class,'userID');
+    }
+    public function jobs(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Job::class,'ownerID');
+    }
+    public function jobRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(JobRequest::class, 'userID');
+    }
+    public function scheduleTable(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ScheduleTable::class,'userID');
+    }
+    public function meetings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Meeting::class,'userID');
+    }
+
 }

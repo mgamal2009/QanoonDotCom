@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('commissions', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('course_commission');
-            $table->tinyInteger('book_commission');
-            $table->tinyInteger('service_commission');
-            $table->tinyInteger('meeting_commission');
+            $table->unsignedTinyInteger('course_commission');
+            $table->unsignedTinyInteger('book_commission');
+            $table->unsignedTinyInteger('service_commission');
+            $table->unsignedTinyInteger('meeting_commission');
             $table->timestamps();
         });
     }

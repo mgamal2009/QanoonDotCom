@@ -36,4 +36,8 @@ class ServiceRequest extends Model
     {
         return $this->hasMany(Offer::class,'serviceReqID');
     }
+    public function room(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Room::class,'serviceReqID');
+    }
 }
