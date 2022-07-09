@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('roomID');
             $table->foreignId('senderID');
             $table->boolean('type');
-            $table->foreign('senderID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('senderID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('roomID')->references('id')->on('rooms')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

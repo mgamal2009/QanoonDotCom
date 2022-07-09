@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('gifts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userID');
+            $table->foreignId('clientID');
             $table->foreignId('adminID');
             $table->boolean('type');
             $table->unsignedDecimal('value',9,3);
-            $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('clientID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('adminID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

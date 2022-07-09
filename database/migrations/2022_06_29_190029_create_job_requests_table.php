@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('email');
             $table->string('phoneNumber');
             $table->foreignId('jobID');
-            $table->foreignId('userID');
+            $table->foreignId('clientID');
             $table->foreign('jobID')->references('id')->on('jobs')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('clientID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();
         });

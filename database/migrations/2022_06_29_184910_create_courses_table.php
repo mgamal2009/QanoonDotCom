@@ -25,7 +25,7 @@ return new class extends Migration
             $table->text('keywords')->nullable();
             $table->text('metaDesc',250)->nullable();
             $table->unsignedTinyInteger('numOfUnits');
-            $table->foreign('creatorID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('creatorID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

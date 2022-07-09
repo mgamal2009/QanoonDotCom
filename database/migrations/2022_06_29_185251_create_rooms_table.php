@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('serviceReqID');
             $table->foreignId('ownerID');
             $table->foreignId('workerID');
-            $table->foreign('ownerID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('workerID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('ownerID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('workerID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('serviceReqID')->references('id')->on('service_requests')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

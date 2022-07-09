@@ -12,7 +12,7 @@ class Coupon extends Model
     protected $fillable = [
         'name',
         'usageCount',
-        'userType',
+        'clientType',
         'expiryDate',
         'type',
         'discountPercent',

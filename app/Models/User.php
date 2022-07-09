@@ -27,15 +27,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'email_verified_at',
-        'gender',
-        'accountType',
-        'birthDate',
-        'balance',
-        'silverPoints',
-        'goldPoints',
-        'cvFile',
-        'phoneNumber',
     ];
 
     /**
@@ -67,66 +58,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function courses(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Course::class,'creatorID');
-    }
-    public function exams(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
-    {
-        return $this->belongsToMany(Exam::class);
-    }
-    public function boughtCourses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
-    {
-        return $this->belongsToMany(Course::class);
-    }
-    public function serviceRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(ServiceRequest::class,'userID');
-    }
-    public function offers(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Offer::class,'userID');
-    }
-    public function ownerRooms(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Room::class,'ownerID');
-    }
-    public function workerRooms(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Room::class,'workerID');
-    }
-    public function messages(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Message::class,'senderID');
-    }
-    public function articles(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Article::class,'userID');
-    }
-    public function buyRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(BuyBookRequest::class,'userID');
-    }
-    public function gifts(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Gift::class,'userID');
-    }
-    public function jobs(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Job::class,'ownerID');
-    }
-    public function jobRequests(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(JobRequest::class, 'userID');
-    }
-    public function scheduleTable(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
-        return $this->hasOne(ScheduleTable::class,'userID');
-    }
-    public function meetings(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Meeting::class,'userID');
-    }
-
 }

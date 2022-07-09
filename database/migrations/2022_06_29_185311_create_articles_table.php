@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userID');
+            $table->foreignId('clientID');
             $table->foreignId('categoryID');
             $table->string('name',127);
             $table->text('content');
             $table->text('metaDesc',250)->nullable();
             $table->text('tags');
             $table->boolean('status')->default(0);
-            $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('clientID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('categoryID')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();

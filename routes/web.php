@@ -25,7 +25,26 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/users',function (){
-        return view('dashboard.users');
-    })->name('users');
+    Route::get('/clients',function (){
+        return view('dashboard.clients');
+    })->name('clients');
+    Route::get('/articles',function (){
+        return view('dashboard.articles');
+    })->name('articles');
+    Route::get('/books',function (){
+        return view('dashboard.books');
+    })->name('books');
+    Route::get('/categories',function (){
+        return view('dashboard.categories');
+    })->name('categories');
+    Route::get('/courses',function (){
+        return view('dashboard.courses');
+    })->name('courses');
+    Route::get('/deliveryCities',function (){
+        return view('dashboard.delivery-cities');
+    })->name('delivery-cities');
+    Route::get('/services',function (){
+        return view('dashboard.services');
+    })->name('services');
+
 });

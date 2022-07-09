@@ -22,17 +22,17 @@ class Course extends Model
         'numOfUnits',
     ];
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function client(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'creatorID');
+        return $this->belongsTo(Client::class,'creatorID');
     }
     public function units(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Unit::class,'courseID');
     }
-    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function clients(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(Client::class);
     }
     public function coupon(): \Illuminate\Database\Eloquent\Relations\HasOne
     {

@@ -135,6 +135,71 @@
                             Dashboard
                         </a>
                     </li>
+                    <li class="items-center">
+                        <a
+                            href="{{route('articles')}}"
+                            class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                        >
+                            <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
+                            Articles
+                        </a>
+                    </li>
+                    <li class="items-center">
+                        <a
+                            href="{{route('books')}}"
+                            class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                        >
+                            <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
+                            Books
+                        </a>
+                    </li>
+                    <li class="items-center">
+                        <a
+                            href="{{route('categories')}}"
+                            class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                        >
+                            <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
+                            Categories
+                        </a>
+                    </li>
+                    <li class="items-center">
+                        <a
+                            href="{{route('clients')}}"
+                            class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                        >
+                            <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
+                            Clients
+                        </a>
+                    </li>
+                    <li class="items-center">
+                        <a
+                            href="{{route('courses')}}"
+                            class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                        >
+                            <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
+                            Courses
+                        </a>
+                    </li>
+                    <li class="items-center">
+                        <a
+                            href="{{route('delivery-cities')}}"
+                            class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                        >
+                            <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
+                            Delivery Cities
+                        </a>
+                    </li>
+                    <li class="items-center">
+                        <a
+                            href="{{route('services')}}"
+                            class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                        >
+                            <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
+                            Services
+                        </a>
+                    </li>
+
+
 
                     <li class="items-center">
                         <a

@@ -16,12 +16,12 @@ class Meeting extends Model
         'status',
         'price',
         'link',
-        'userID',
+        'clientID',
         'scheduleID',
     ];
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function client(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'userID');
+        return $this->belongsTo(Client::class,'clientID');
     }
     public function schedule(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

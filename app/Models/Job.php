@@ -18,7 +18,7 @@ class Job extends Model
 
     public function owner(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'ownerID');
+        return $this->belongsTo(Client::class,'ownerID');
     }
     public function requests(): \Illuminate\Database\Eloquent\Relations\HasMany
     {

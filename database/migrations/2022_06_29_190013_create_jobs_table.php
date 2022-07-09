@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('desc');
             $table->unsignedDecimal('price',9,3);
             $table->foreignId('ownerID');
-            $table->foreign('ownerID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('ownerID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

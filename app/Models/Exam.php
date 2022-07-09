@@ -20,8 +20,8 @@ class Exam extends Model
     {
         return $this->belongsTo(Unit::class,'unitID');
     }
-    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function clients(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(Client::class);
     }
 }

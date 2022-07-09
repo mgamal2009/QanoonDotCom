@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',65);
             $table->unsignedInteger('usageCount');
-            $table->boolean('userType');
+            $table->boolean('clientType');
             $table->date('expiryDate');
             $table->boolean('type');
             $table->unsignedTinyInteger('discountPercent');

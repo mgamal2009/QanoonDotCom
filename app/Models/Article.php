@@ -10,7 +10,7 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
-        'userID',
+        'clientID',
         'categoryID',
         'name',
         'content',
@@ -21,7 +21,7 @@ class Article extends Model
 
     public function writer(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'userID');
+        return $this->belongsTo(Client::class,'clientID');
     }
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

@@ -15,21 +15,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name',65);
+            $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
-            $table->boolean('gender');
-            $table->boolean('accountType');
-            $table->date('birthDate')->nullable();
-            $table->unsignedDecimal('balance',9,3);
-            $table->unsignedInteger('silverPoints')->default(0);
-            $table->unsignedInteger('goldPoints')->default(0);
-            $table->string('cvFile',2048)->nullable();
-            $table->string('phoneNumber')->unique();
             $table->timestamps();
         });
     }

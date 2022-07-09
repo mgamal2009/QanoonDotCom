@@ -20,8 +20,8 @@ return new class extends Migration
             $table->json('bookedPeriods');
             $table->unsignedDecimal('meetingPrice',9,3);
             $table->unsignedTinyInteger('meetingDuration')->default(40);
-            $table->foreignId('userID');
-            $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('clientID');
+            $table->foreign('clientID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

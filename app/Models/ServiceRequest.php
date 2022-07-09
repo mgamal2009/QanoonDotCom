@@ -10,7 +10,7 @@ class ServiceRequest extends Model
     use HasFactory;
 
     protected $fillable = [
-        'userID',
+        'clientID',
         'serviceID',
         'offerID',
         'desc',
@@ -20,9 +20,9 @@ class ServiceRequest extends Model
         'maxPrice',
         'deliveredFiles',
     ];
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function client(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'userID');
+        return $this->belongsTo(Client::class,'clientID');
     }
     public function service(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

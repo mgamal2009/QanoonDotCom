@@ -21,6 +21,6 @@ class Message extends Model
     }
     public function sender(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'senderID');
+        return $this->belongsTo(Client::class,'senderID');
     }
 }

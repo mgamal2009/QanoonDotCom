@@ -10,18 +10,18 @@ class Gift extends Model
     use HasFactory;
 
     protected $fillable = [
-        'userID',
+        'clientID',
         'adminID',
         'type',
         'value',
     ];
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function client(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'userID');
+        return $this->belongsTo(Client::class,'clientID');
     }
     public function admin(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Admin::class,'adminID');
+        return $this->belongsTo(User::class,'adminID');
     }
 }

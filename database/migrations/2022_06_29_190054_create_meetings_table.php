@@ -21,9 +21,9 @@ return new class extends Migration
             $table->boolean('status')->default(0);
             $table->unsignedDecimal('price',9,3);
             $table->string('link',127);
-            $table->foreignId('userID');
+            $table->foreignId('clientID');
             $table->foreignId('scheduleID');
-            $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('clientID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('scheduleID')->references('id')->on('schedule_tables')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();

@@ -11,7 +11,7 @@ class Offer extends Model
 
     protected $fillable = [
         'serviceReqID',
-        'userID',
+        'clientID',
         'status',
         'price',
     ];
@@ -23,8 +23,8 @@ class Offer extends Model
     {
         return $this->belongsTo(ServiceRequest::class,'serviceReqID');
     }
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function client(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'userID');
+        return $this->belongsTo(Client::class,'clientID');
     }
 }

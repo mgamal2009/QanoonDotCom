@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('buy_book_requests', function (Blueprint $table) {
             $table->id();
             $table->foreignId('bookID');
-            $table->foreignId('userID');
+            $table->foreignId('clientID');
             $table->foreignId('billID');
             $table->foreign('bookID')->references('id')->on('books')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('userID')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('clientID')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('billID')->references('id')->on('book_bills')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

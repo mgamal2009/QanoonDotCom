@@ -14,15 +14,15 @@ class JobRequest extends Model
         'email',
         'phoneNumber',
         'jobID',
-        'userID',
+        'clientID',
     ];
 
     public function job(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Job::class,'jobID');
     }
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function client(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'userID');
+        return $this->belongsTo(Client::class,'clientID');
     }
 }

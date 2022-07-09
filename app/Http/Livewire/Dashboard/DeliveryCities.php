@@ -4,10 +4,10 @@ namespace App\Http\Livewire\Dashboard;
 
 use Livewire\Component;
 
-class Users extends Component
+class DeliveryCities extends Component
 {
     public function render()
     {
-        return view('livewire.dashboard.users');
+        return view('livewire.dashboard.delivery-cities');
     }
 }

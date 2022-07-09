@@ -15,12 +15,12 @@ class ScheduleTable extends Model
         'bookedPeriods',
         'meetingPrice',
         'meetingDuration',
-        'userID',
+        'clientID',
     ];
 
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function client(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'userID');
+        return $this->belongsTo(Client::class,'clientID');
     }
     public function meetings(): \Illuminate\Database\Eloquent\Relations\HasMany
     {

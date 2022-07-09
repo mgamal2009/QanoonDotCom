@@ -1,7 +1,7 @@
 <div>
     @section('pageName')
-        <a class="text-white text-sm uppercase hidden lg:inline-block font-semibold" href="{{route('users')}}">
-            Users
+        <a class="text-white text-sm uppercase hidden lg:inline-block font-semibold" href="{{route('courses')}}">
+            Courses
         </a>
     @endsection
     <div class="px-4 md:px-10 mx-auto w-full -m-24">
@@ -64,7 +64,7 @@
                                     class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
                                 >
                                     <img
-                                        src="../../assets/img/bootstrap.jpg"
+                                        src="{{asset('images/bootstrap.jpg')}}"
                                         class="h-12 w-12 bg-white rounded-full border"
                                         alt="..."
                                     />
@@ -88,22 +88,22 @@
                                 >
                                     <div class="flex">
                                         <img
-                                            src="../../assets/img/team-1-800x800.jpg"
+                                            src="{{asset('images/team-1-800x800.jpg')}}"
                                             alt="..."
                                             class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
                                         />
                                         <img
-                                            src="../../assets/img/team-2-800x800.jpg"
+                                            src="{{asset('images/team-2-800x800.jpg')}}"
                                             alt="..."
                                             class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
                                         />
                                         <img
-                                            src="../../assets/img/team-3-800x800.jpg"
+                                            src="{{asset('images/team-3-800x800.jpg')}}"
                                             alt="..."
                                             class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
                                         />
                                         <img
-                                            src="../../assets/img/team-4-470x470.png"
+                                            src="{{asset('images/team-4-470x470.png')}}"
                                             alt="..."
                                             class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
                                         />

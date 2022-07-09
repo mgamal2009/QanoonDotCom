@@ -19,7 +19,10 @@
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/app.js')}}" defer></script>
+    @livewireScripts
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <x-livewire-alert::scripts />
 </head>
 <body class="font-sans antialiased">
 @livewire('dashboard.components.vertical-bar')
@@ -447,6 +450,6 @@
         window.myBar = new Chart(ctx, config);
     })();
 </script>
-@livewireScripts
+
 </body>
 </html>
